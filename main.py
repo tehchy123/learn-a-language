@@ -36,17 +36,14 @@ answeredcorrectly = 0
 answeredincorrectly = 0
 
 # Read of CSV File (https://www.studytonight.com/python-howtos/how-to-read-csv-to-list-in-python)
-filepath = input("Absolute path of csv (Enter nothing for default): ")
+filepath = input("Absolute path of csv (tagalog.csv by default): ")
 if filepath == "":
-    filepath = "testing.csv"
+    filepath = "tagalog.csv"
 df = read_csv(filepath)
-english_list = df['english'].tolist()
 language_list = df['language'].tolist()
+english_list = df['english'].tolist()
 startpracticeq = input("Start Practice Now? (y/n): ")
 nested_list = [english_list, language_list]
-print(english_list)
-print(language_list)
-print(nested_list)
 while True:
     if startpracticeq == "y":
         startpracticebool = 1
