@@ -1,5 +1,5 @@
 from time import sleep
-import pandas as pd
+from pandas import *
 from tqdm import tqdm
 import random
 
@@ -39,9 +39,14 @@ answeredincorrectly = 0
 filepath = input("Absolute path of csv (Enter nothing for default): ")
 if filepath == "":
     filepath = "testing.csv"
-df = pd.read_csv(filepath, delimiter=',', usecols=['english', 'language'])
-list_of_rows = [list(row) for row in df.values] # list variable saved as "list_of_rows"
+df = read_csv(filepath)
+english_list = df['english'].tolist()
+language_list = df['language'].tolist()
 startpracticeq = input("Start Practice Now? (y/n): ")
+nested_list = [english_list, language_list]
+print(english_list)
+print(language_list)
+print(nested_list)
 while True:
     if startpracticeq == "y":
         startpracticebool = 1
@@ -50,7 +55,7 @@ while True:
         startpracticebool = 0
         break
     else:
-        startpracticeq = input("Start Practice Now? (y/n): ")
+        startpracticeq = input("Start Practice Nw? (y/n): ")
 if startpracticebool == 1:
     print("Loading...")
     sleep(1)
@@ -60,13 +65,13 @@ if startpracticebool == 1:
         while True:
             selected_list = random.randint(0,1)
             if selected_list == 0:
-                selected_word = random.choice(list_of_rows[0])
-                wordposition = list_of_rows[0].index(selected_word)
-                realanswer = list_of_rows[1][wordposition]
+                selected_word = random.choice(nested_list[0])
+                wordposition = nested_list[0].index(selected_word)
+                realanswer = nested_list[1][wordposition]
             elif selected_list == 1:
-                selected_word = random.choice(list_of_rows[1])
-                wordposition = list_of_rows[1].index(selected_word)
-                realanswer = list_of_rows[0][wordposition]
+                selected_word = random.choice(nested_list[1])
+                wordposition = nested_list[1].index(selected_word)
+                realanswer = nested_list[0][wordposition]
             else:
                 print("Exiting due to random number breakage")
             practiceanswer = input("Question " + str(questionno) + ": What does " + selected_word + " mean? ")
