@@ -1,0 +1,12 @@
+Ask for words and their english translation eg: tagalog_word then english_word OR read from csv file
+    use non english break words to continue program
+        "Fini"
+after entering two translated words, create two immutable lists while ensuring that the two words have the same position.
+ask to start practice
+no exits the program
+yes will print a random word from the list
+ask what the translated word is
+if position of answer matches that of the position of the printed word, answer will be correct
+go to next question
+this will be running in a loop that can be broken by answering "brk"
+if position of answer does not match that of the position of the printed word, answer will be incorrect
