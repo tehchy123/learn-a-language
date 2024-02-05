@@ -83,13 +83,14 @@ if startpracticebool == 1:
             elif practiceanswer == "brk":
                 totalanswered = questionno - 2
                 averagescore = answeredcorrectly / totalanswered * 100
+                averagescoreint = int(averagescore)
                 
                 print("")
                 print("Practice Statistics:")
                 print("    Total Questions Answered: " + str(totalanswered))
                 print("    Total Questions Answered Correctly: " + str(answeredcorrectly))
                 print("    Total Questions Answered Incorrectly: " + str(answeredincorrectly))
-                print("    Overall Accuracy: " + str(averagescore))
+                print("    Overall Accuracy: " + str(averagescoreint))
                 break
             else:
                 print("Incorrect")
