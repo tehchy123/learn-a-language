@@ -38,6 +38,12 @@ answeredcorrectly = 0
 answeredincorrectly = 0
 
 # Read of CSV File (https://www.studytonight.com/python-howtos/how-to-read-csv-to-list-in-python)
+continuationbool = input("Continue from last session? (Y/n) ")
+if continuationbool == Y:
+    continuationfile = open("continue_cache", "r")
+    content = continuationfile.read()
+    
+    file.close()
 targetlanguage = input("What language would you like to practice? ")
 targetlangtopic = input("What topic would you like to practice in " + targetlanguage + "? ")
 filepath = targetlanguage + "_" + targetlangtopic + ".csv"
