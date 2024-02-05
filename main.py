@@ -71,6 +71,7 @@ if startpracticebool == 1:
                 realanswer = nested_list[0][wordposition]
             else:
                 print("Exiting due to random number breakage")
+            print("")
             practiceanswer = input("Question " + str(questionno) + ": What does " + selected_word + " mean? ")
             questionno = questionno + 1
             if practiceanswer == realanswer:
@@ -89,6 +90,7 @@ if startpracticebool == 1:
                 break
             else:
                 print("Incorrect")
+                print("The correct answer is " + realanswer)
                 answeredincorrectly = answeredincorrectly + 1
         break
 elif startpracticebool == 0:
