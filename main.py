@@ -38,9 +38,10 @@ answeredcorrectly = 0
 answeredincorrectly = 0
 
 # Read of CSV File (https://www.studytonight.com/python-howtos/how-to-read-csv-to-list-in-python)
-filepath = input("Absolute path of csv (tagalog.csv by default): ")
+filepath = input("Absolute path of target csv: ")
 if filepath == "":
-    filepath = "tagalog.csv"
+    print("Defaulting to tagalog_family")
+    filepath = "tagalog_family.csv"
 df = read_csv(filepath)
 language_list = df['language'].tolist()
 english_list = df['english'].tolist()
