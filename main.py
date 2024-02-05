@@ -67,7 +67,6 @@ if startpracticebool == 1:
         sleep(0.5)
     while True:
         while True:
-            timespent = timespent + 1
             selected_list = random.randint(0,1)
             if selected_list == 0:
                 selected_word = random.choice(nested_list[0])
@@ -92,7 +91,6 @@ if startpracticebool == 1:
                 
                 print("")
                 print("Practice Statistics:")
-                print("    Time Spent Practicing: " + str(timespent) + "seconds")
                 print("    Total Questions Answered: " + str(totalanswered))
                 print("    Total Questions Answered Correctly: " + str(answeredcorrectly))
                 print("    Total Questions Answered Incorrectly: " + str(answeredincorrectly))
