@@ -36,9 +36,13 @@ print("""
 questionno = 1
 answeredcorrectly = 0
 answeredincorrectly = 0
+timespent = 0
 
 # Read of CSV File (https://www.studytonight.com/python-howtos/how-to-read-csv-to-list-in-python)
-filepath = input("Absolute path of target csv: ")
+targetlanguage = input("What language would you like to practice? ")
+targetlangtopic = input("What topic would you like to practice in " + targetlanguage + "? ")
+filepath = targetlanguage + "_" + targetlangtopic + ".csv"
+print(filepath)
 if filepath == "":
     print("Defaulting to tagalog_family")
     filepath = "tagalog_family.csv"
@@ -55,7 +59,7 @@ while True:
         startpracticebool = 0
         break
     else:
-        startpracticeq = input("Start Practice Nw? (y/n): ")
+        startpracticeq = input("Start Practice Now? (y/n): ")
 if startpracticebool == 1:
     print("Loading...")
     sleep(1)
@@ -63,6 +67,7 @@ if startpracticebool == 1:
         sleep(0.5)
     while True:
         while True:
+            timespent = timespent + 1
             selected_list = random.randint(0,1)
             if selected_list == 0:
                 selected_word = random.choice(nested_list[0])
@@ -87,6 +92,7 @@ if startpracticebool == 1:
                 
                 print("")
                 print("Practice Statistics:")
+                print("    Time Spent Practicing: " + str(timespent) + "seconds")
                 print("    Total Questions Answered: " + str(totalanswered))
                 print("    Total Questions Answered Correctly: " + str(answeredcorrectly))
                 print("    Total Questions Answered Incorrectly: " + str(answeredincorrectly))
