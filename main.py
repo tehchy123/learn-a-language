@@ -44,7 +44,7 @@ if filepath == "":
 df = read_csv(filepath)
 language_list = df['language'].tolist()
 english_list = df['english'].tolist()
-startpracticeq = input("Start Practice Now? (y/n): ")
+startpracticeq = input("Start Practice Now? (Y/n): ")
 nested_list = [english_list, language_list]
 while True:
     if startpracticeq == "y":
