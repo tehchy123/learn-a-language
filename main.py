@@ -36,7 +36,6 @@ print("""
 questionno = 1
 answeredcorrectly = 0
 answeredincorrectly = 0
-timespent = 0
 
 # Read of CSV File (https://www.studytonight.com/python-howtos/how-to-read-csv-to-list-in-python)
 targetlanguage = input("What language would you like to practice? ")
