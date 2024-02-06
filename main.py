@@ -39,14 +39,20 @@ answeredincorrectly = 0
 
 # Read of CSV File (https://www.studytonight.com/python-howtos/how-to-read-csv-to-list-in-python)
 continuationbool = input("Continue from last session? (Y/n) ")
-if continuationbool == Y:
+if continuationbool == "Y":
     continuationfile = open("continue_cache", "r")
     content = continuationfile.read()
-    
-    file.close()
-targetlanguage = input("What language would you like to practice? ")
-targetlangtopic = input("What topic would you like to practice in " + targetlanguage + "? ")
-filepath = targetlanguage + "_" + targetlangtopic + ".csv"
+    continuationfile.close()
+    filepath = str(content)
+elif continuationbool == "y":
+    continuationfile = open("continue_cache", "r")
+    content = continuationfile.read()
+    continuationfile.close()
+    filepath = str(content)
+else:
+    targetlanguage = input("What language would you like to practice? ")
+    targetlangtopic = input("What topic would you like to practice in " + targetlanguage + "? ")
+    filepath = targetlanguage + "_" + targetlangtopic + ".csv"
 print(filepath)
 if filepath == "":
     print("Defaulting to tagalog_family")
@@ -93,6 +99,9 @@ if startpracticebool == 1:
                 totalanswered = questionno - 2
                 averagescore = answeredcorrectly / totalanswered * 100
                 averagescoreint = int(averagescore)
+                
+                continuationfile = open("continue_cache", "w")
+                continuationfile.write(filepath)
                 
                 print("")
                 print("Practice Statistics:")
